@@ -70,7 +70,6 @@ const Body = ()=>{
     <div className="body-div">
           {filteredrestaurants.length===0?(<h1>No restraunt found</h1>):(
               filteredrestaurants.map((restraunt)=>{
-                  console.log(filteredrestaurants)
                       return <RestaurantCard {...restraunt.info} key={restraunt.info.id} />
                   })
           )
