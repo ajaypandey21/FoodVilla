@@ -1,32 +1,26 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// const [restrauntMenu,setRestaurantsMenu] = useState();
-
-
-
+import { IMG_CDN } from "./constant";
+import { Shimmer } from "./Shimmer";
+import useRestaurant from "../../utils/useRestauraMenu";
 
 const RestaurantDetail = () =>{
-    const {resid} = useParams();
-    useEffect(()=>{
-        getRestaurantsMenu();
-    },[])
-    const getRestaurantsMenu = async () => {
-        try {
-          const data2 = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId=33861&catalog_qa=undefined&submitAction=ENTER");
-          const json2 = await data2.json();
-          console.log(json2)
-    
-        
-        } catch (error) {
-          console.error("Error fetching data: ", error);
-        } 
-      };
-   
-    return(
-      <h1>
-          RestaurantID:{resid}
-      </h1>
-    )
   
-  }
-  export default RestaurantDetail;
+    const {resid} = useParams();
+    const restraunt=useRestaurant(resid);
+
+    
+    return !restraunt ?(<Shimmer />):(
+      <div className="menu">
+          <img src={IMG_CDN +restraunt.cloudinaryImageId} ></img>
+          <h1>RestaurantID:{resid}</h1> 
+          <h2>{restraunt.name}</h2>
+          <h3>{restraunt.avgRating} stars</h3>
+          <h3>{restraunt.cuisines?.join(", ")}</h3>
+          <h3>{restraunt.costForTwoMessage}</h3>
+      </div>
+)
+};
+export default RestaurantDetail;
+
+          
+  

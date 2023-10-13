@@ -30,6 +30,7 @@ const Header = ()=>{
             <li>Contact</li>
             <li>Cart</li> */}
         </ul>
+        <Link to="/signupform"><button >SignupForm</button></Link>
 
         </div>
     </div>
