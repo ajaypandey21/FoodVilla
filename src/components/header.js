@@ -1,39 +1,45 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png"
+import useOnline from "../../utils/useOnline";
 const Logo =()=>{
     return( 
     <a href="/">
-    <img alt="food villa" className="img" src={logo} /> 
-    </a>);
+    <img className="h-28 p-2" alt="food villa"  src={logo} /> 
+    </a>
+   
+    );
    };
 
-const Title =()=>{
-    return( <div className="title">
-     <h1>AJAY DI HATTI</h1>
-    </div>
-   );
-   };
 
 const Header = ()=>{
+    const isOnline=useOnline();
     return(
         
-    <div className="head-div">
+    <div className="flex justify-evenly bg-white shadow-lg ">
         <Logo />
-        <Title/>
-        <div className="nav-items">
-        <ul >
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/cart">Cart</Link></li>
+    <div className="flex" >
+        <ul className="flex py-10"  >
+            <li className="px-2"><Link to="/">Home</Link></li>
+            <li className="px-2"><Link to="/about">About</Link></li>
+            <li className="px-2"><Link to="/contact">Contact</Link></li>
+            <li className="px-2"><Link to="/cart">Cart</Link></li>
+            <li className="px-2">{isOnline ? "✅" : "🔴"}</li>
+            
             {/* <li>About</li>
             <li>Contact</li>
-            <li>Cart</li> */}
+        <li>Cart</li> */}
         </ul>
-        <Link to="/signupform"><button >SignupForm</button></Link>
-
-        </div>
+    </div>  
+    <h1 className="py-8 " >
+    <Link to="/signupform"><button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >login</button>
+    </Link>
+    
+    </h1>
     </div>
+    
+
 );
 };
+
+
 export default Header;
