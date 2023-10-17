@@ -1,243 +1,244 @@
  export const IMG_CDN = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
  export const FETCH_MENU_RES = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId="
  export const REST_MENU_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6525666&lng=77.408566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
- export const  restrauntlist =[
-    {
+ export const REST_MENU_DETAIL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId=355360&catalog_qa=undefined&submitAction=ENTER"
+//  export const  restrauntlist =[
+//     {
         
           
-            "info": {
-              "id": "259508",
-              "name": "Hot Spot Pizza",
-              "cloudinaryImageId": "uat5zhutez4jzz9qkgye",
-              "locality": "Noor Nagar",
-              "areaName": "Raj Nagar Extension",
-              "costForTwo": "₹300 for two",
-              "cuisines": [
-                "Pizzas"
-              ],
-              "avgRating": 4,
-              "feeDetails": {
-                "restaurantId": "259508",
-                "fees": [
-                  {
-                    "name": "BASE_DISTANCE",
-                    "fee": 5700
-                  },
-                  {
-                    "name": "BASE_TIME"
-                  },
-                  {
-                    "name": "ANCILLARY_SURGE_FEE"
-                  }
-                ],
-                "totalFee": 5700
-              },
-              "parentId": "11425",
-              "avgRatingString": "4.0",
-              "totalRatingsString": "100+",
-              "promoted": true,
-              "adTrackingId": "cid=8760750~p=1~eid=0000018a-ffc6-57ac-0611-ede5004c0168~srvts=1696508303276~83637",
-              "sla": {
-                "deliveryTime": 37,
-                "lastMileTravel": 6.4,
-                "serviceability": "SERVICEABLE",
-                "slaString": "37 mins",
-                "lastMileTravelString": "6.4 km",
-                "iconType": "ICON_TYPE_EMPTY"
-              },
-              "availability": {
-                "nextCloseTime": "2023-10-05 23:00:00",
-                "opened": true
-              },
-              "badges": {
+//             "info": {
+//               "id": "259508",
+//               "name": "Hot Spot Pizza",
+//               "cloudinaryImageId": "uat5zhutez4jzz9qkgye",
+//               "locality": "Noor Nagar",
+//               "areaName": "Raj Nagar Extension",
+//               "costForTwo": "₹300 for two",
+//               "cuisines": [
+//                 "Pizzas"
+//               ],
+//               "avgRating": 4,
+//               "feeDetails": {
+//                 "restaurantId": "259508",
+//                 "fees": [
+//                   {
+//                     "name": "BASE_DISTANCE",
+//                     "fee": 5700
+//                   },
+//                   {
+//                     "name": "BASE_TIME"
+//                   },
+//                   {
+//                     "name": "ANCILLARY_SURGE_FEE"
+//                   }
+//                 ],
+//                 "totalFee": 5700
+//               },
+//               "parentId": "11425",
+//               "avgRatingString": "4.0",
+//               "totalRatingsString": "100+",
+//               "promoted": true,
+//               "adTrackingId": "cid=8760750~p=1~eid=0000018a-ffc6-57ac-0611-ede5004c0168~srvts=1696508303276~83637",
+//               "sla": {
+//                 "deliveryTime": 37,
+//                 "lastMileTravel": 6.4,
+//                 "serviceability": "SERVICEABLE",
+//                 "slaString": "37 mins",
+//                 "lastMileTravelString": "6.4 km",
+//                 "iconType": "ICON_TYPE_EMPTY"
+//               },
+//               "availability": {
+//                 "nextCloseTime": "2023-10-05 23:00:00",
+//                 "opened": true
+//               },
+//               "badges": {
                 
-              },
-              "isOpen": true,
-              "type": "F",
-              "badgesV2": {
-                "entityBadges": {
-                  "textBased": {
+//               },
+//               "isOpen": true,
+//               "type": "F",
+//               "badgesV2": {
+//                 "entityBadges": {
+//                   "textBased": {
                     
-                  },
-                  "imageBased": {
+//                   },
+//                   "imageBased": {
                     
-                  },
-                  "textExtendedBadges": {
+//                   },
+//                   "textExtendedBadges": {
                     
-                  }
-                }
-              },
-              "aggregatedDiscountInfoV3": {
-                "header": "20% OFF",
-                "subHeader": "UPTO ₹50"
-              },
-              "orderabilityCommunication": {
-                "title": {
+//                   }
+//                 }
+//               },
+//               "aggregatedDiscountInfoV3": {
+//                 "header": "20% OFF",
+//                 "subHeader": "UPTO ₹50"
+//               },
+//               "orderabilityCommunication": {
+//                 "title": {
                   
-                },
-                "subTitle": {
+//                 },
+//                 "subTitle": {
                   
-                },
-                "message": {
+//                 },
+//                 "message": {
                   
-                },
-                "customIcon": {
+//                 },
+//                 "customIcon": {
                   
-                }
-              },
-              "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                  "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                  "lottie": {
+//                 }
+//               },
+//               "differentiatedUi": {
+//                 "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+//                 "differentiatedUiMediaDetails": {
+//                   "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+//                   "lottie": {
                     
-                  },
-                  "video": {
+//                   },
+//                   "video": {
                     
-                  }
-                }
-              },
-              "reviewsSummary": {
+//                   }
+//                 }
+//               },
+//               "reviewsSummary": {
                 
-              },
-              "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-              "restaurantOfferPresentationInfo": {
+//               },
+//               "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+//               "restaurantOfferPresentationInfo": {
                 
-              },
+//               },
             
-            "analytics": {
+//             "analytics": {
               
-            },
-            "cta": {
-              "link": "swiggy://menu?restaurant_id=259508&source=collection&query=Burger",
-              "text": "RESTAURANT_MENU",
-              "type": "DEEPLINK"
-            },
-            "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
-          },
-          "relevance": {
-            "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
-            "sectionId": "MENU_RETURN_FOOD"
-          }
+//             },
+//             "cta": {
+//               "link": "swiggy://menu?restaurant_id=259508&source=collection&query=Burger",
+//               "text": "RESTAURANT_MENU",
+//               "type": "DEEPLINK"
+//             },
+//             "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+//           },
+//           "relevance": {
+//             "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
+//             "sectionId": "MENU_RETURN_FOOD"
+//           }
         
-      },
-      {
+//       },
+//       {
         
-            "info": {
-              "id": "254002",
-              "name": "McDonald's",
-              "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
-              "locality": "Opulent Mall",
-              "areaName": "Nehru Nagar",
-              "costForTwo": "₹400 for two",
-              "cuisines": [
-                "American"
-              ],
-              "avgRating": 4.2,
-              "feeDetails": {
-                "restaurantId": "254002",
-                "fees": [
-                  {
-                    "name": "BASE_DISTANCE",
-                    "fee": 3900
-                  },
-                  {
-                    "name": "BASE_TIME"
-                  },
-                  {
-                    "name": "ANCILLARY_SURGE_FEE"
-                  }
-                ],
-                "totalFee": 3900
-              },
-              "parentId": "630",
-              "avgRatingString": "4.2",
-              "totalRatingsString": "5K+",
-              "sla": {
-                "deliveryTime": 27,
-                "lastMileTravel": 3.9,
-                "serviceability": "SERVICEABLE",
-                "slaString": "27 mins",
-                "lastMileTravelString": "3.9 km",
-                "iconType": "ICON_TYPE_EMPTY"
-              },
-              "availability": {
-                "nextCloseTime": "2023-10-05 23:25:00",
-                "opened": true
-              },
-              "badges": {
+//             "info": {
+//               "id": "254002",
+//               "name": "McDonald's",
+//               "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
+//               "locality": "Opulent Mall",
+//               "areaName": "Nehru Nagar",
+//               "costForTwo": "₹400 for two",
+//               "cuisines": [
+//                 "American"
+//               ],
+//               "avgRating": 4.2,
+//               "feeDetails": {
+//                 "restaurantId": "254002",
+//                 "fees": [
+//                   {
+//                     "name": "BASE_DISTANCE",
+//                     "fee": 3900
+//                   },
+//                   {
+//                     "name": "BASE_TIME"
+//                   },
+//                   {
+//                     "name": "ANCILLARY_SURGE_FEE"
+//                   }
+//                 ],
+//                 "totalFee": 3900
+//               },
+//               "parentId": "630",
+//               "avgRatingString": "4.2",
+//               "totalRatingsString": "5K+",
+//               "sla": {
+//                 "deliveryTime": 27,
+//                 "lastMileTravel": 3.9,
+//                 "serviceability": "SERVICEABLE",
+//                 "slaString": "27 mins",
+//                 "lastMileTravelString": "3.9 km",
+//                 "iconType": "ICON_TYPE_EMPTY"
+//               },
+//               "availability": {
+//                 "nextCloseTime": "2023-10-05 23:25:00",
+//                 "opened": true
+//               },
+//               "badges": {
                 
-              },
-              "isOpen": true,
-              "aggregatedDiscountInfoV2": {
+//               },
+//               "isOpen": true,
+//               "aggregatedDiscountInfoV2": {
                 
-              },
-              "type": "F",
-              "badgesV2": {
-                "entityBadges": {
-                  "textBased": {
+//               },
+//               "type": "F",
+//               "badgesV2": {
+//                 "entityBadges": {
+//                   "textBased": {
                     
-                  },
-                  "imageBased": {
+//                   },
+//                   "imageBased": {
                     
-                  },
-                  "textExtendedBadges": {
+//                   },
+//                   "textExtendedBadges": {
                     
-                  }
-                }
-              },
-              "orderabilityCommunication": {
-                "title": {
+//                   }
+//                 }
+//               },
+//               "orderabilityCommunication": {
+//                 "title": {
                   
-                },
-                "subTitle": {
+//                 },
+//                 "subTitle": {
                   
-                },
-                "message": {
+//                 },
+//                 "message": {
                   
-                },
-                "customIcon": {
+//                 },
+//                 "customIcon": {
                   
-                }
-              },
-              "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                  "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                  "lottie": {
+//                 }
+//               },
+//               "differentiatedUi": {
+//                 "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+//                 "differentiatedUiMediaDetails": {
+//                   "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+//                   "lottie": {
                     
-                  },
-                  "video": {
+//                   },
+//                   "video": {
                     
-                  }
-                }
-              },
-              "reviewsSummary": {
+//                   }
+//                 }
+//               },
+//               "reviewsSummary": {
                 
-              },
-              "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-              "restaurantOfferPresentationInfo": {
+//               },
+//               "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+//               "restaurantOfferPresentationInfo": {
                 
-              }
-            ,
-            "analytics": {
+//               }
+//             ,
+//             "analytics": {
               
-            },
-            "cta": {
-              "link": "swiggy://menu?restaurant_id=254002&source=collection&query=Burger",
-              "text": "RESTAURANT_MENU",
-              "type": "DEEPLINK"
-            },
-            "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
-          },
-          "relevance": {
-            "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
-            "sectionId": "MENU_RETURN_FOOD"
-          }
+//             },
+//             "cta": {
+//               "link": "swiggy://menu?restaurant_id=254002&source=collection&query=Burger",
+//               "text": "RESTAURANT_MENU",
+//               "type": "DEEPLINK"
+//             },
+//             "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+//           },
+//           "relevance": {
+//             "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
+//             "sectionId": "MENU_RETURN_FOOD"
+//           }
         
-      }
+//       }
 
-]
+// ]
 
 
 // export const newdd = [

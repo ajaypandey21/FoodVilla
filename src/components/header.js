@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png"
 import useOnline from "../../utils/useOnline";
+import sign from "../assets/img/sign.png"
 const Logo =()=>{
     return( 
     <a href="/">
@@ -13,17 +14,19 @@ const Logo =()=>{
 
 const Header = ()=>{
     const isOnline=useOnline();
+    
     return(
         
     <div className="flex justify-evenly bg-white shadow-lg ">
         <Logo />
     <div className="flex" >
         <ul className="flex py-10"  >
-            <li className="px-2"><Link to="/">Home</Link></li>
-            <li className="px-2"><Link to="/about">About</Link></li>
-            <li className="px-2"><Link to="/contact">Contact</Link></li>
-            <li className="px-2"><Link to="/cart">Cart</Link></li>
-            <li className="px-2">{isOnline ? "✅" : "🔴"}</li>
+            <li className="px-6 hover:text-orange-500 "><Link  to="/">Home</Link></li>
+            <li className="px-6 hover:text-orange-500"><Link to="/about">About</Link></li>
+            <li className="px-6 hover:text-orange-500"><Link to="/contact">Contact</Link></li>
+            <li className="px-6 hover:text-orange-500"><Link to="/cart">Cart</Link></li>
+            <li className="px-6 hover:text-orange-500"><Link to="/instamart">Instamart</Link></li>
+            <li className="px-6 hover:text-orange-500">{isOnline ? "✅" : "🔴"}</li>
             
             {/* <li>About</li>
             <li>Contact</li>
@@ -31,7 +34,7 @@ const Header = ()=>{
         </ul>
     </div>  
     <div className="py-8 " >
-    <Link to="/signupform"><button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >login</button>
+    <Link to="/signupform"><button className=" flex" ><span ><img className="h-8 w-8 "  src={sign}></img></span><span className="pl-2 hover:text-orange-500">Sign In</span></button>
     </Link>
     
     </div>

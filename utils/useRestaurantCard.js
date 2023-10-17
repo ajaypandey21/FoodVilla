@@ -24,11 +24,11 @@ const getRestaurantsData = async () => {
     } catch (error) {
       console.error("Error fetching data: ", error);
     } 
-   
+    
   };
 
 
-  return [allrestaurants,filteredrestaurants];
+  return [allrestaurants,filteredrestaurants,];
 
 };
 export default useRestaurantCard;
