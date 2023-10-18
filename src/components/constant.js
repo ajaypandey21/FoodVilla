@@ -2,6 +2,7 @@
  export const FETCH_MENU_RES = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId="
  export const REST_MENU_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6525666&lng=77.408566&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
  export const REST_MENU_DETAIL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId=355360&catalog_qa=undefined&submitAction=ENTER"
+ 
 //  export const  restrauntlist =[
 //     {
         

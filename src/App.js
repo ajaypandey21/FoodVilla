@@ -13,6 +13,8 @@ import ProfileClass from "./components/ProfileClass";
 import Profile from "./components/Profile"
 import Instamart from "./components/Instamart";
 import UserContext from "../utils/userContext";
+import { Provider } from "react-redux";
+import store from "../utils/store"
 const About = lazy(()=>import("./components/about"))
 
 const Applayout = ()=>{
@@ -22,9 +24,9 @@ const Applayout = ()=>{
         email:"Pajay7686@gmail.com"
     }
 }
-    
+     
     return(
-        <>
+        <Provider store={store}>
         <Header />
         <Outlet />
         <UserContext.Provider value={{
@@ -33,7 +35,7 @@ const Applayout = ()=>{
             <Footer />
        </UserContext.Provider>
           
-        </>
+        </Provider>
 
     );
 };
