@@ -36,41 +36,76 @@ const RestaurantDetail = () =>{
           console.error("Error fetching data: ", error);
         }     
       };
+      return !restraunt ?(<Shimmer />):(
+          <div className="m-2 flex">
+            <div className=" p-4">
+              <img src={IMG_CDN + restraunt.cloudinaryImageId} alt={restraunt.name} className="w-64 h-52 rounded-2xl" />
+              <h1 className="text-xl mt-4 font-bold">RestaurantID: {resid}</h1>
+              <h2 className="text-2xl font-bold">{restraunt.name}</h2>
+              <div className="flex items-center mt-2">
+                <span className="text-lg text-yellow-500">★</span>
+                <span className="text-lg ml-1">{restraunt.avgRating} stars</span>
+              </div>
+              <h3 className="text-lg mt-2">{restraunt.cuisines?.join(", ")}</h3>
+              <h3 className="text-lg mt-2">{restraunt.costForTwoMessage}</h3>
+            </div>
 
-    return !restraunt ?(<Shimmer />):(
-    <div className="flex">
-        <div>
-            <img src={IMG_CDN +restraunt.cloudinaryImageId} ></img>
-            <h1>RestaurantID:{resid}</h1> 
-            <h2>{restraunt.name}</h2>
-            <h3>{restraunt.avgRating} stars</h3>
-            <h3>{restraunt.cuisines?.join(", ")}</h3>
-            <h3>{restraunt.costForTwoMessage}</h3>
+            <div className="w-1/2 p-4">
+              <h1 className="text-2xl font-bold my-2">Menu</h1>
+              {menuitems && Array.isArray(menuitems) ? (
+                <ul className="list-disc">
+                  {menuitems.map((item) => (
+                    <li key={item?.card?.info?.id} className="flex justify-between items-center border-b border-gray-300 py-2">
+                      <span className="text-lg">{item?.card?.info?.name}</span>
+                      <button
+                        className="bg-green-500 text-white rounded-lg px-4 py-1 hover:bg-green-600"
+                        onClick={() => addItems(item)}
+                      >
+                        Add
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-lg mt-4">No menu items available.</p>
+              )}
+            </div>
+          </div>
+          )
+}
+
+
+//     return !restraunt ?(<Shimmer />):(
+//     <div className=" m-2 flex">
+//         <div>
+//             <img className="" src={IMG_CDN +restraunt.cloudinaryImageId} ></img>
+//             <h1>RestaurantID:{resid}</h1> 
+//             <h2>{restraunt.name}</h2>
+//             <h3>{restraunt.avgRating} stars</h3>
+//             <h3>{restraunt.cuisines?.join(", ")}</h3>
+//             <h3>{restraunt.costForTwoMessage}</h3>
            
-        </div>
+//         </div>
 
-          <div className="p-5">
-            <h1 className="font-bold my-2">Menu</h1>
+//           <div className="p-5">
+//             <h1 className="font-bold my-2">Menu</h1>
           
-        {menuitems && Array.isArray(menuitems) ? (
-          <ul className="list-disc ">
-            {menuitems.map((item) => (
-              <li key={item?.card?.info?.id}>
-                {item?.card?.info?.name} <button className="m-1 p-1 bg-green-400" onClick={()=>addItems(item)}>Add</button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No menu items available.</p>
-        )}
-        </div>
+//         {menuitems && Array.isArray(menuitems) ? (
+//           <ul className="list-disc ">
+//             {menuitems.map((item) => (
+//               <li key={item?.card?.info?.id}>
+//                 {item?.card?.info?.name} <button className="m-1 p-1 bg-green-400" onClick={()=>addItems(item)}>Add</button>
+//               </li>
+//             ))}
+//           </ul>
+//         ) : (
+//           <p>No menu items available.</p>
+//         )}
+//         </div>
 
 
        
-      </div>
-)
-};
+//       </div>
+// )
+// };
 export default RestaurantDetail;
-
-          
-  
