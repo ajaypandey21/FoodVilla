@@ -2,7 +2,7 @@ import { useState,useEffect } from "react"
 import { FETCH_MENU_RES } from "../src/components/constant";
 
 const useRestaurantMenu = (resid) =>{
-    const [restaurant,setRestaurants]= useState(null);
+    const [restaurant,setRestaurants]= useState([]);
     useEffect(()=>{
             getRestaurantsMenu();
     },[])

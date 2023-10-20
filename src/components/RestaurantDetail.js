@@ -46,7 +46,7 @@ const RestaurantDetail = () =>{
                 <span className="text-lg text-yellow-500">★</span>
                 <span className="text-lg ml-1">{restraunt.avgRating} stars</span>
               </div>
-              <h3 className="text-lg mt-2">{restraunt.cuisines?.join(", ")}</h3>
+              <h3 className="text-sm mt-2">{restraunt.cuisines?.join(", ")}</h3>
               <h3 className="text-lg mt-2">{restraunt.costForTwoMessage}</h3>
             </div>
 

@@ -11,7 +11,7 @@ import { IMG_CDN } from "./constant";
       <div className="py-2">
         <h3 className="font-bold text-lg truncate">{name}</h3>
       </div>
-      <div className="text-sm truncate">
+      <div className="text-sm ">
         <h3>{description}</h3>
       </div>
       <div className="text-lg font-bold mt-2">
