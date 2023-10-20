@@ -86,15 +86,31 @@ const getRestaurantsData = async () => {
     </button>
       
     </div>
-    <div className="body-div flex flex-wrap justify-evenly pl-36 pr-36   " >
-          {filteredrestaurants.length===0?(<h1>No restraunt found</h1>):(
+    {/* <div className="body-div flex flex-wrap justify-evenly pl-36 pr-36   " >
+          {filteredrestaurants?.length===0?(<h1>No restraunt found</h1>):(
               filteredrestaurants.map((restraunt)=>{
                       return <Link to={"/restaurants/"+ restraunt.info.id} key={restraunt.info.id}>
                       <RestaurantCard {...restraunt.info}  /></Link>
                   })
           )
           }  
-    </div>
+    </div> */}
+    <div className="body-div flex flex-wrap justify-evenly pl-36 pr-36">
+  {filteredrestaurants ? (
+    filteredrestaurants.length === 0 ? (
+      <h1>No restaurant found</h1>
+    ) : (
+      filteredrestaurants.map((restaurant) => (
+        <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
+          <RestaurantCard {...restaurant.info} />
+        </Link>
+      ))
+    )
+  ) : (
+    <Shimmer /> // You can add a loading state if needed
+  )}
+</div>
+
       </>
     )
   };

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -11,7 +12,7 @@ const validationSchema = Yup.object().shape({
 
 const initialValues = {
   name: 'Enter your name',
-  email: 'Enter you email',
+  email: 'Enter your email',
   password: '',
   phone: '',
 };
@@ -30,33 +31,33 @@ function SignupForm() {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <form>
-          <div>
-            <label htmlFor="name">Name</label>
-            <Field type="text" id="name" name="name" />
-            <ErrorMessage name="name" component="div" className="error" />
+        <form className="max-w-md mx-auto p-4 border rounded-lg shadow-lg mt-2">
+          <div className="mb-4">
+            <label htmlFor="name" className="block font-semibold text-gray-700">Name</label>
+            <Field type="text" id="name" name="name" className="w-full px-3 py-2 border rounded-md" />
+            <ErrorMessage name="name" component="div" className="text-red-600" />
           </div>
 
-          <div>
-            <label htmlFor="email">Email</label>
-            <Field type="email" id="email" name="email" />
-            <ErrorMessage name="email" component="div" className="error" />
+          <div className="mb-4">
+            <label htmlFor="email" className="block font-semibold text-gray-700">Email</label>
+            <Field type="email" id="email" name="email" className="w-full px-3 py-2 border rounded-md" />
+            <ErrorMessage name="email" component="div" className="text-red-600" />
           </div>
 
-          <div>
-            <label htmlFor="password">Password</label>
-            <Field type="password" id="password" name="password" />
-            <ErrorMessage name="password" component="div" className="error" />
+          <div className="mb-4">
+            <label htmlFor="password" className="block font-semibold text-gray-700">Password</label>
+            <Field type="password" id="password" name="password" className="w-full px-3 py-2 border rounded-md" />
+            <ErrorMessage name="password" component="div" className="text-red-600" />
           </div>
 
-          <div>
-            <label htmlFor="phone">Phone</label>
-            <Field type="text" id="phone" name="phone" />
-            <ErrorMessage name="phone" component="div" className="error" />
+          <div className="mb-4">
+            <label htmlFor="phone" className="block font-semibold text-gray-700">Phone</label>
+            <Field type="text" id="phone" name="phone" className="w-full px-3 py-2 border rounded-md" />
+            <ErrorMessage name="phone" component="div" className="text-red-600" />
           </div>
 
-          <button type="submit" disabled={isSubmitting}>
-            Submit
+          <button type="submit" disabled={isSubmitting} className="w-full px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-700">
+            {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
         </form>
       )}

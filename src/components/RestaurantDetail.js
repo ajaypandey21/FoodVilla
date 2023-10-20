@@ -39,7 +39,7 @@ const RestaurantDetail = () =>{
       return !restraunt ?(<Shimmer />):(
           <div className="m-2 flex">
             <div className=" p-4">
-              <img src={IMG_CDN + restraunt.cloudinaryImageId} alt={restraunt.name} className="w-64 h-52 rounded-2xl" />
+              <img src={IMG_CDN + restraunt.cloudinaryImageId} alt={restraunt.name} className="w-64 h-52 rounded-2xl" /><img></img>
               <h1 className="text-xl mt-4 font-bold">RestaurantID: {resid}</h1>
               <h2 className="text-2xl font-bold">{restraunt.name}</h2>
               <div className="flex items-center mt-2">
