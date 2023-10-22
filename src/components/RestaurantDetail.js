@@ -54,13 +54,14 @@ const RestaurantDetail = () =>{
               <h3 className="text-sm mt-2">{restraunt.cuisines?.join(", ")}</h3>
               <h3 className="text-lg mt-2">{restraunt.costForTwoMessage}</h3>
             </div>
-            <div className="w-1/2 p-4">
+
+<div className="w-1/2 p-4">
   <h1 className="text-2xl font-bold my-2">Menu</h1>
   {menuitems && Array.isArray(menuitems) ? (
     <ul className="space-y-4">
       {menuitems.map((item) => (
         <li key={item.card?.info?.id || item.dish?.info?.id} className="flex items-center py-2">
-          <div className="w-24 h-24 object-cover rounded-md mr-4 flex-shrink-0">
+          <div className="w-28 h-28 object-cover rounded-md mr-4 flex-shrink-0">
             <img
               src={IMG_CDN + (item.card?.info?.imageId || item.dish?.info?.imageId)}
               alt={item.card?.info?.name || item.dish?.info?.name}
@@ -74,7 +75,7 @@ const RestaurantDetail = () =>{
               {item.card?.info?.description || item.dish?.info?.description}
             </p>
             <p className="text-lg font-bold mt-2">
-              {item.card?.info?.price/100 || item.dish?.info?.price/ 100 || item.dish.info.defaultPrice/100} Rupees
+              {item.card?.info?.price/100 || item.dish?.info?.price/ 100 || item?.dish?.info?.defaultPrice/100 || item.card?.info?.defaultPrice/100} Rupees
             </p>
             <button
               className="bg-green-500 text-white rounded-lg px-4 py-1 hover:bg-green-600 mt-2"
