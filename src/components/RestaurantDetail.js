@@ -25,17 +25,21 @@ const RestaurantDetail = () =>{
     const getMenuData = async () => {
         try {
           const data = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId=${resid}&catalog_qa=undefined&submitAction=ENTER`);   
-          // const data3 = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6525666&lng=77.408566&restaurantId=539151&catalog_qa=undefined&submitAction=ENTER");   
           const json = await data.json();
-          // const json2 = await data3.json();
-          // console.log(json2)
-          const data2=json?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards
-          
-          setMenuitems(data2);
+        
+          (json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)? (
+           setMenuitems( json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards)):
+          json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card?.card?.carousel?(
+           setMenuitems(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card?.card?.carousel)):
+           console.error("Invalid data structure.");
+           console.log(menuitems)
         } catch (error) {
           console.error("Error fetching data: ", error);
         }     
       };
+
+          
+      
       return !restraunt ?(<Shimmer />):(
           <div className="m-2 flex">
             <div className=" p-4">
@@ -55,8 +59,9 @@ const RestaurantDetail = () =>{
               {menuitems && Array.isArray(menuitems) ? (
                 <ul className="list-disc">
                   {menuitems.map((item) => (
-                    <li key={item?.card?.info?.id} className="flex justify-between items-center border-b border-gray-300 py-2">
-                      <span className="text-lg">{item?.card?.info?.name}</span>
+                    <li key={item.card?.info?.id || item.dish?.info?.id} className="flex justify-between items-center border-b border-gray-300 py-2">
+                      {/* <span className="text-lg">{item?.card?.info?.name}</span> */}
+                      <span className="text-lg">{item.card?.info?.name || item.dish?.info?.name}</span>
                       <button
                         className="bg-green-500 text-white rounded-lg px-4 py-1 hover:bg-green-600"
                         onClick={() => addItems(item)}

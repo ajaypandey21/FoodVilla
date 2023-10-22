@@ -48,7 +48,7 @@ const getRestaurantsData = async () => {
     const data =filterData(searchInput,allrestaurants);
     setfilteredRestaurants(data);    
    };
-
+   
    if(!isOnline){
     return <h1>Your are Offline,Please check your Connection.  </h1>;
    }

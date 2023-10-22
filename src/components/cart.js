@@ -8,9 +8,10 @@ const Cart = () =>{
     dispatch(clearCart());
 
   }
+  
   const totalAmount=()=>{
     const total = additems.reduce((acc,curr)=>{
-      const itemPrice=((curr.card?.info?.price)/100) || 0;
+      const itemPrice=((curr.card?.info?.price || curr.dish?.info?.price)/100)  ;
       
       return acc+itemPrice;
 
@@ -26,7 +27,7 @@ const Cart = () =>{
               </div>
               <div className="flex flex-wrap mt-4">
                 {additems.map((item) => (
-                  <Fooditems key={item?.card?.info?.id} {...item?.card?.info} />
+                  <Fooditems key={item?.card?.info?.id} {...(item?.card?.info || item?.dish?.info)} />
                 ))}
               </div>
             </div>
@@ -36,11 +37,3 @@ const Cart = () =>{
     
      
 
-   // <div>
-      // <h1 className="font-bold text-2xl">Cart Items:{additems.length}</h1>
-      // <button className="bg-blue-600" onClick={()=>handleclearCart()}>Clear cart</button>
-      // <div className="flex flex-wrap">  
-      //     {additems.map((item)=>(<Fooditems key={item?.card?.info?.id} {...item?.card?.info} />))}
-      // </div>
-
-      // </div>
