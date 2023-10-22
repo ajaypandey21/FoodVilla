@@ -38,7 +38,7 @@ const RestaurantDetail = () =>{
         }     
       };
 
-          
+
       
       return !restraunt ?(<Shimmer />):(
           <div className="m-2 flex">
@@ -72,7 +72,7 @@ const RestaurantDetail = () =>{
                   ))}
                 </ul>
               ) : (
-                <p className="text-lg mt-4">No menu items available.</p>
+                <p className="text-lg mt-4">No menu items .</p>
               )}
             </div>
           </div>
