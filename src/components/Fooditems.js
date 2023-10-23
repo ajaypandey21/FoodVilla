@@ -8,10 +8,6 @@ const Fooditems = ({name,price,imageId,description,defaultPrice,count,index})=>{
   const remItem=(index)=>{
     dispatch(removeItem(index));
   }
-
-  
-  
-      
   return(  <div className="m-2 p-2 w-56 rounded-2xl shadow-lg bg-white overflow-hidden">
         {/* <span className="text-red-800">counter{count}</span> */}
         <div className="flex justify-end"><button  onClick={()=>remItem(index)} className="bg-gray-800 rounded-3xl p-1 text-white ">Remove</button></div>

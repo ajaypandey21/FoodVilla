@@ -15,6 +15,7 @@ const RestaurantDetail = () =>{
     
     const addItems = (item)=>{
       dispatch(addItem(item));
+     
     };
   
 
@@ -32,73 +33,68 @@ const RestaurantDetail = () =>{
           json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card?.card?.carousel?(
            setMenuitems(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card?.card?.carousel)):
            console.error("Invalid data structure.");
-           console.log(menuitems)
+           
         } catch (error) {
           console.error("Error fetching data: ", error);
         }     
       };
-      console.log(menuitems)  
+    
 
           
       
-      return !restraunt ?(<Shimmer />):(
-          <div className="m-2 flex">
-            <div className=" p-4">
-              <img src={IMG_CDN + restraunt.cloudinaryImageId} alt={restraunt.name} className="w-64 h-52 rounded-2xl" /><img></img>
-              <h1 className="text-xl mt-4 font-bold">RestaurantID: {resid}</h1>
-              <h2 className="text-2xl font-bold">{restraunt.name}</h2>
-              <div className="flex items-center mt-2">
-                <span className="text-lg text-yellow-500">★</span>
-                <span className="text-lg ml-1">{restraunt.avgRating} stars</span>
-              </div>
-              <h3 className="text-sm mt-2">{restraunt.cuisines?.join(", ")}</h3>
-              <h3 className="text-lg mt-2">{restraunt.costForTwoMessage}</h3>
+      return !restraunt ? (<Shimmer />) : (
+        <div className="m-2 flex flex-col md:flex-row">
+          <div className="p-4">
+            <img src={IMG_CDN + restraunt.cloudinaryImageId} alt={restraunt.name} className="w-64 h-52 rounded-2xl" />
+            <h1 className="text-xl mt-4 font-bold">RestaurantID: {resid}</h1>
+            <h2 className="text-2xl font-bold">{restraunt.name}</h2>
+            <div className="flex items-center mt-2">
+              <span className="text-lg text-yellow-500">★</span>
+              <span className="text-lg ml-1">{restraunt.avgRating} stars</span>
             </div>
-
-<div className="w-1/2 p-4">
-  <h1 className="text-2xl font-bold my-2">Menu</h1>
-  {menuitems && Array.isArray(menuitems) ? (
-    <ul className="space-y-4">
-      {menuitems.map((item) => (
-        <li key={item.card?.info?.id || item.dish?.info?.id} className="flex items-center py-2">
-          <div className="w-28 h-28 object-cover rounded-md mr-4 flex-shrink-0">
-            <img
-              src={IMG_CDN + (item.card?.info?.imageId || item.dish?.info?.imageId)}
-              alt={item.card?.info?.name || item.dish?.info?.name}
-            />
+            <h3 className="text-sm mt-2">{restraunt.cuisines?.join(", ")}</h3>
+            <h3 className="text-lg mt-2">{restraunt.costForTwoMessage}</h3>
           </div>
-          <div>
-            <h2 className="text-lg font-bold">
-              {item.card?.info?.name || item.dish?.info?.name}
-            </h2>
-            <p className="text-sm">
-              {item.card?.info?.description || item.dish?.info?.description}
-            </p>
-            <p className="text-lg font-bold mt-2">
-              {item.card?.info?.price/100 || item.dish?.info?.price/ 100 || item?.dish?.info?.defaultPrice/100 || item.card?.info?.defaultPrice/100} Rupees
-            </p>
-            <button
-              className="bg-green-500 text-white rounded-lg px-4 py-1 hover:bg-green-600 mt-2"
-              onClick={() => addItems(item)}
-            >
-              Add
-            </button>
+      
+          <div className="w-full md:w-1/2 p-4">
+            <h1 className="text-2xl font-bold my-2">Menu</h1>
+            {menuitems && Array.isArray(menuitems) ? (
+              <ul className="space-y-4">
+                {menuitems.map((item) => (
+                  <li key={item.card?.info?.id || item.dish?.info?.id} className="flex items-center py-2">
+                    <div className="w-28 h-28 object-cover rounded-md md:mr-4 md:flex-shrink-0">
+                      <img
+                        src={IMG_CDN + (item.card?.info?.imageId || item.dish?.info?.imageId)}
+                        alt={item.card?.info?.name || item.dish?.info?.name}
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-bold">
+                        {item.card?.info?.name || item.dish?.info?.name}
+                      </h2>
+                      <p className="text-sm">
+                        {item.card?.info?.description || item.dish?.info?.description}
+                      </p>
+                      <p className="text-lg font-bold mt-2">
+                        {item.card?.info?.price / 100 || item.dish?.info?.price / 100 || item?.dish?.info?.defaultPrice / 100 || item.card?.info?.defaultPrice / 100} Rupees
+                      </p>
+                      <button
+                        className="bg-green-500 text-white rounded-lg px-4 py-1 hover:bg-green-600 mt-2"
+                        onClick={() => addItems(item)}
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-lg mt-4">No menu items available.</p>
+            )}
           </div>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p className="text-lg mt-4">No menu items available.</p>
-  )}
-</div>
-
-
-
-
-
-
-          </div>
-          )
+        </div>
+      );
+      
 }
 
 // /*
