@@ -9,7 +9,7 @@ const Cart = () =>{
   
   const totalAmount=()=>{
     const total = additems.reduce((acc,curr)=>{
-      const itemPrice=((curr.card?.info?.price || curr.dish?.info?.price || curr.card.info.defaultPrice))/100 ;
+      const itemPrice=((curr.card?.info?.price || curr.dish?.info?.price || curr.card?.info?.defaultPrice))/100 ;
       
       return acc+itemPrice;
 
