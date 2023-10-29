@@ -35,8 +35,8 @@ const getRestaurantsData = async () => {
       const data = await fetch(REST_MENU_LIST);
       const json = await data.json();
 
-      setfilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setallRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setfilteredRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setallRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       console.log(json)
      
     } catch (error) {
